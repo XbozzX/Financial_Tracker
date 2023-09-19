@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="financial_Tracker.Expenses"
+             Title="Expenses">
+    <VerticalStackLayout>
+        <Label 
+            Text="How much?"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start"
+            Padding="20"
+            />
+
+        <Entry Placeholder="RM0.00"/>
+
+        <Frame BorderColor="White">
+            <Picker x:Name="picker"
+                    Title="Category">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Eat</x:String>
+                        <x:String>Movie</x:String>
+                        <x:String>Petrol</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Frame>
+
+        <Label x:Name="dataCategory" Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" />
+
+        <Button x:Name="continueBtn"
+                Text="Continue"
+                Clicked="continueBtn_Clicked"
+                Margin="100"/>
+    </VerticalStackLayout>
+</ContentPage>

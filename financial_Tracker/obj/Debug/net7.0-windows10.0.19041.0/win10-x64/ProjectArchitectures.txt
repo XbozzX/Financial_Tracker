@@ -1,0 +1,1 @@
+Z:\project\Financial Tracker\financial_Tracker\financial_Tracker.csproj;x64
